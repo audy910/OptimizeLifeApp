@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightbeige">
+
+
+        <ImageView
+            android:id="@+id/welcome"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:foregroundGravity="center_horizontal"
+            app:srcCompat="@drawable/welcome" />
+
+        <TextView
+            android:id="@+id/chronotype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="false"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Chronotype"
+            android:textColor="@color/rust"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/test_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="49dp"
+            android:padding="10dp"
+            android:text="test"
+            android:textColor="@color/darkgrey"
+            android:textSize="20sp"></Button>
+
+        <DigitalClock
+            android:id="@+id/clock_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chronotype"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="00:00"
+            android:textColor="@color/lightblue"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/time_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clock_view"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Time to "
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/also_can"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_to"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Also good "
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/optimal_wake_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/also_can"
+            android:layout_centerInParent="true"
+            android:layout_margin="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="Optimal Wakeup Time: "
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/optimal_sleep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/optimal_wake_up"
+            android:layout_centerInParent="true"
+            android:layout_margin="25dp"
+            android:text="Optimal Sleep Time: "
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/optimal_sleep"
+            android:layout_centerInParent="true">
+
+
+            <CheckBox
+                android:id="@+id/logical_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="15dp"
+                android:clickable="true"
+                android:onClick="bearClicked"
+                android:padding="15dp"
+                android:shadowColor="@color/rust"
+                android:text="Bear"
+                android:textColor="@color/darkgrey"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/labor_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="lionClicked"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toRightOf="@id/logical_btn"
+                android:clickable="true"
+                android:padding="15dp"
+                android:shadowColor="@color/rust"
+                android:text="Lion"
+                android:textColor="@color/darkgrey"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/creative_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labor_btn"
+                android:onClick="wolfClicked"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="15dp"
+                android:clickable="true"
+                android:padding="15dp"
+                android:shadowColor="@color/rust"
+                android:text="Wolf"
+                android:textColor="@color/darkgrey"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/Social_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labor_btn"
+                android:onClick="dolphinClicked"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toRightOf="@id/creative_btn"
+                android:clickable="true"
+                android:padding="15dp"
+                android:shadowColor="@color/rust"
+                android:text="Dolphin"
+                android:textColor="@color/darkgrey"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
