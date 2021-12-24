@@ -13,13 +13,59 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
             android:background="@color/lightbeige">
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                android:hint="Title..."
+                android:padding="25dp"
+                android:textColor="@color/darkgrey"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_text"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                android:hint="Description..."
+                android:padding="25dp"
+                android:textColor="@color/darkgrey"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="20sp"></TextView>
 
 
             <RelativeLayout
+                android:id="@+id/checkbox_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
+                android:layout_below="@id/description_text"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp">
 
 
                 <CheckBox
@@ -66,7 +112,7 @@
                     android:layout_below="@id/labor_btn"
                     android:layout_marginStart="15dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="27dp"
                     android:layout_marginEnd="35dp"
                     android:layout_marginRight="35dp"
                     android:layout_marginBottom="15dp"
@@ -79,7 +125,7 @@
                     android:textSize="16sp" />
 
                 <CheckBox
-                    android:id="@+id/Social_btn"
+                    android:id="@+id/social_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/labor_btn"
@@ -100,6 +146,66 @@
 
 
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/deadline_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkbox_layout"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp">
+
+
+                <TextView
+                    android:id="@+id/deadline_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="false"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:padding="25dp"
+                    android:text="Deadline: "
+                    android:textColor="@color/darkgrey"
+                    android:textSize="20sp"></TextView>
+
+                <EditText
+                    android:id="@+id/deadline_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="false"
+                    android:layout_centerHorizontal="false"
+                    android:layout_toRightOf="@id/deadline_textview"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:padding="25dp"
+                    android:text="date"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="20sp" />
+                </RelativeLayout>
+
+            <Button
+                android:id="@+id/submit_add_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/deadline_container"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="25dp"
+                android:paddingLeft="25dp"
+                android:paddingTop="15dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="15dp"
+                android:text="SUBMIT"
+                android:textStyle="bold"></Button>
+
+
 
 
 

@@ -15,17 +15,35 @@ public class MainActivity extends AppCompatActivity {
     private Button lionBtn, wolfBtn, bearBtn, dolphinBtn, testBtn;
     private TextView chronotypeText;
 
+    //add event layout variables
+    private TextView titleText, descriptionText, deadlineDate;
+    private Button submit, logicalBtn, laborBtn, socialBtn, creativeBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //initialize variables
+        //initialising add event layout variables
+        //TextViews
+        titleText = findViewById(R.id.title_text);
+        descriptionText = findViewById(R.id.description_text);
+        deadlineDate = findViewById(R.id.deadline_date);
+        //Buttons
+        logicalBtn = findViewById(R.id.logical_btn);
+        laborBtn = findViewById(R.id.labor_btn);
+        socialBtn = findViewById(R.id.social_btn);
+        creativeBtn = findViewById(R.id.creative_btn);
+        submit = findViewById(R.id.submit_add_event);
+
+
+
+        //initialize  main activity variables
         //buttons to assign chronotype
         lionBtn = findViewById(R.id.labor_btn);
         bearBtn = findViewById(R.id.logical_btn);
         wolfBtn = findViewById(R.id.creative_btn);
-        dolphinBtn = findViewById(R.id.Social_btn);
+        dolphinBtn = findViewById(R.id.social_btn);
         //link to test
         testBtn = findViewById(R.id.test_link);
         //assigned chronotype
