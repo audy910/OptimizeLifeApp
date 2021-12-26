@@ -5,18 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     private String chronotype;
-    private Button lionBtn, wolfBtn, bearBtn, dolphinBtn, testBtn;
+    private Button lionBtn, wolfBtn, bearBtn, dolphinBtn, testBtn,addEventBtn, editEventsBtn;
     private TextView chronotypeText;
 
     //add event layout variables
-    private TextView titleText, descriptionText, deadlineDate;
+    private EditText deadlineDate;
+    private EditText titleText, descriptionText;
     private Button submit, logicalBtn, laborBtn, socialBtn, creativeBtn;
 
     @Override
@@ -38,12 +44,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         //initialize  main activity variables
         //buttons to assign chronotype
         lionBtn = findViewById(R.id.labor_btn);
         bearBtn = findViewById(R.id.logical_btn);
         wolfBtn = findViewById(R.id.creative_btn);
         dolphinBtn = findViewById(R.id.social_btn);
+        //buttons to edit/add events
+        addEventBtn = findViewById(R.id.add_event_btn);
+        editEventsBtn = findViewById(R.id.edit_events_btn);
         //link to test
         testBtn = findViewById(R.id.test_link);
         //assigned chronotype
@@ -57,7 +67,30 @@ public class MainActivity extends AppCompatActivity {
                 openUrl("https://www.drozshow.com/quizzes/whats-your-chronotype");
             }
         });
-    }
+
+        //take to addEvent activity when add event btn clicked
+        addEventBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendAddEvent = new Intent(MainActivity.this, addEvent.class);
+                sendAddEvent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(sendAddEvent);
+                finish();
+            }
+        });
+//        //create event when submit clicked
+//        submit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String title = titleText.toString();
+//                String description = descriptionText.toString();
+//                String eventType = getEventType();
+//                String deadline = deadlineDate.toString();
+//                event event1 = new event(title, description, eventType,deadline);
+//                Toast.makeText(this, event1.getDescription() + event1.getTitle(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+   }
     //assigning chronotype based on clicking buttons
     public void bearClicked(View view) {
         chronotype = "Bear";
@@ -77,6 +110,28 @@ public class MainActivity extends AppCompatActivity {
     public void dolphinClicked(View view) {
         chronotype = "Dolphin";
         chronotypeText.setText(chronotype);
+    }
+    //in order to put the type of event into a string for creating events
+    public String getEventType()
+    {
+        String eventType = "";
+        if (laborBtn.isSelected())
+        {
+            eventType.concat("labor ") ;
+        }
+        if(logicalBtn.isSelected())
+        {
+            eventType.concat("logic ");
+        }
+        if(socialBtn.isSelected())
+        {
+            eventType.concat("social ");
+        }
+        if(creativeBtn.isSelected())
+        {
+            eventType.concat("creative ");
+        }
+        return eventType;
     }
 
 

@@ -133,6 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/optimal_sleep"
+            android:id="@+id/chronotypes_container"
             android:layout_centerInParent="true">
 
 
@@ -216,8 +217,32 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chronotypes_container"
+            android:layout_centerHorizontal="true"
+            >
 
+            <Button
+                android:id="@+id/add_event_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:text="Add Event" />
+
+            <Button
+                android:id="@+id/edit_events_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_toRightOf="@+id/add_event_btn"
+                android:text="Edit Events" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
